@@ -1,0 +1,52 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Snotify Toast Notifications
+@import "~vue-snotify/styles/material";
+
+// Placeholder loader
+@import "~placeholder-loading/src/scss/placeholder-loading";
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+#main-chat-card {
+  height: 100vh;
+}
+
+.messages-list {
+  max-height: 96%;
+  overflow-y: scroll;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
