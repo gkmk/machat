@@ -1823,3 +1823,115 @@ Horizon started successfully.
 [36mEvent: App\Events\SendMessage[39m
 [2018-07-30 14:45:12][58] Processing: App\Jobs\SaveMessageHistory
 [2018-07-30 14:45:12][58] Processed:  App\Jobs\SaveMessageHistory
+[36mChannel: presence-chat.default[39m
+[36mEvent: App\Events\SendMessage[39m
+[2018-07-30 14:57:01][59] Processing: App\Jobs\SaveMessageHistory
+[2018-07-30 14:57:01][59] Processed:  App\Jobs\SaveMessageHistory
+[36m[15:01:25] - 9tjeryPc2VZOkLxdAAAh left channel: presence-chat.default (transport close)[39m
+[36m[15:01:25] - 9tjeryPc2VZOkLxdAAAh left channel: private-chat (transport close)[39m
+[36m[15:01:25] - 9tjeryPc2VZOkLxdAAAh left channel: private-App.User.1 (transport close)[39m
+[36m[15:01:25] - 9tjeryPc2VZOkLxdAAAh left channel: private-user.1 (transport close)[39m
+[36m[15:01:28] - bSuzSXcABEGbVj6DAAAi authenticated for: presence-chat.default[39m
+[36m[15:01:28] - bSuzSXcABEGbVj6DAAAi joined channel: presence-chat.default[39m
+[36m[15:01:29] - bSuzSXcABEGbVj6DAAAi authenticated for: private-chat[39m
+[36m[15:01:29] - bSuzSXcABEGbVj6DAAAi joined channel: private-chat[39m
+[36m[15:01:29] - bSuzSXcABEGbVj6DAAAi authenticated for: private-App.User.1[39m
+[36m[15:01:29] - bSuzSXcABEGbVj6DAAAi joined channel: private-App.User.1[39m
+[36m[15:01:30] - bSuzSXcABEGbVj6DAAAi authenticated for: private-user.1[39m
+[36m[15:01:30] - bSuzSXcABEGbVj6DAAAi joined channel: private-user.1[39m
+[36m[15:01:56] - bSuzSXcABEGbVj6DAAAi left channel: presence-chat.default (transport close)[39m
+[36m[15:01:56] - bSuzSXcABEGbVj6DAAAi left channel: private-chat (transport close)[39m
+[36m[15:01:56] - bSuzSXcABEGbVj6DAAAi left channel: private-App.User.1 (transport close)[39m
+[36m[15:01:56] - bSuzSXcABEGbVj6DAAAi left channel: private-user.1 (transport close)[39m
+[36m[15:01:58] - HkjVyDUREnil2ObpAAAj authenticated for: presence-chat.default[39m
+[36m[15:01:58] - HkjVyDUREnil2ObpAAAj joined channel: presence-chat.default[39m
+[36m[15:01:59] - HkjVyDUREnil2ObpAAAj authenticated for: private-chat[39m
+[36m[15:01:59] - HkjVyDUREnil2ObpAAAj joined channel: private-chat[39m
+[36m[15:01:59] - HkjVyDUREnil2ObpAAAj authenticated for: private-App.User.1[39m
+[36m[15:01:59] - HkjVyDUREnil2ObpAAAj joined channel: private-App.User.1[39m
+[36m[15:02:00] - HkjVyDUREnil2ObpAAAj authenticated for: private-user.1[39m
+[36m[15:02:00] - HkjVyDUREnil2ObpAAAj joined channel: private-user.1[39m
+[36m[15:02:42] - HkjVyDUREnil2ObpAAAj left channel: presence-chat.default (transport close)[39m
+[36m[15:02:42] - HkjVyDUREnil2ObpAAAj left channel: private-chat (transport close)[39m
+[36m[15:02:42] - HkjVyDUREnil2ObpAAAj left channel: private-App.User.1 (transport close)[39m
+[36m[15:02:42] - HkjVyDUREnil2ObpAAAj left channel: private-user.1 (transport close)[39m
+[36m[15:02:45] - fNlQrKjXwM3ACkwpAAAk authenticated for: presence-chat.default[39m
+[36m[15:02:45] - fNlQrKjXwM3ACkwpAAAk joined channel: presence-chat.default[39m
+[36m[15:02:45] - fNlQrKjXwM3ACkwpAAAk authenticated for: private-user.1[39m
+[36m[15:02:45] - fNlQrKjXwM3ACkwpAAAk joined channel: private-user.1[39m
+[36m[15:02:46] - fNlQrKjXwM3ACkwpAAAk authenticated for: private-chat[39m
+[36m[15:02:46] - fNlQrKjXwM3ACkwpAAAk joined channel: private-chat[39m
+[36m[15:02:46] - fNlQrKjXwM3ACkwpAAAk authenticated for: private-App.User.1[39m
+[36m[15:02:46] - fNlQrKjXwM3ACkwpAAAk joined channel: private-App.User.1[39m
+[36m[15:03:15] - fNlQrKjXwM3ACkwpAAAk left channel: presence-chat.default (transport close)[39m
+[36m[15:03:15] - fNlQrKjXwM3ACkwpAAAk left channel: private-user.1 (transport close)[39m
+[36m[15:03:15] - fNlQrKjXwM3ACkwpAAAk left channel: private-chat (transport close)[39m
+[36m[15:03:15] - fNlQrKjXwM3ACkwpAAAk left channel: private-App.User.1 (transport close)[39m
+[36m[15:03:18] - GMpmKstruX2u1gN9AAAl authenticated for: private-user.1[39m
+[36m[15:03:18] - GMpmKstruX2u1gN9AAAl joined channel: private-user.1[39m
+[36m[15:03:18] - GMpmKstruX2u1gN9AAAl authenticated for: private-chat[39m
+[36m[15:03:18] - GMpmKstruX2u1gN9AAAl joined channel: private-chat[39m
+[36m[15:03:18] - GMpmKstruX2u1gN9AAAl authenticated for: private-App.User.1[39m
+[36m[15:03:18] - GMpmKstruX2u1gN9AAAl joined channel: private-App.User.1[39m
+[36m[15:03:19] - GMpmKstruX2u1gN9AAAl authenticated for: presence-chat.default[39m
+[36m[15:03:19] - GMpmKstruX2u1gN9AAAl joined channel: presence-chat.default[39m
+[36m[15:05:12] - GMpmKstruX2u1gN9AAAl left channel: private-user.1 (transport close)[39m
+[36m[15:05:12] - GMpmKstruX2u1gN9AAAl left channel: private-chat (transport close)[39m
+[36m[15:05:12] - GMpmKstruX2u1gN9AAAl left channel: private-App.User.1 (transport close)[39m
+[36m[15:05:12] - GMpmKstruX2u1gN9AAAl left channel: presence-chat.default (transport close)[39m
+[36m[15:05:15] - vMEhtAhu-tpPsVVqAAAm authenticated for: presence-chat.default[39m
+[36m[15:05:15] - vMEhtAhu-tpPsVVqAAAm joined channel: presence-chat.default[39m
+[36m[15:05:15] - vMEhtAhu-tpPsVVqAAAm authenticated for: private-App.User.1[39m
+[36m[15:05:15] - vMEhtAhu-tpPsVVqAAAm joined channel: private-App.User.1[39m
+[36m[15:05:16] - vMEhtAhu-tpPsVVqAAAm authenticated for: private-chat[39m
+[36m[15:05:16] - vMEhtAhu-tpPsVVqAAAm joined channel: private-chat[39m
+[36m[15:05:16] - vMEhtAhu-tpPsVVqAAAm authenticated for: private-user.1[39m
+[36m[15:05:16] - vMEhtAhu-tpPsVVqAAAm joined channel: private-user.1[39m
+[36m[15:06:50] - vMEhtAhu-tpPsVVqAAAm left channel: presence-chat.default (transport close)[39m
+[36m[15:06:50] - vMEhtAhu-tpPsVVqAAAm left channel: private-App.User.1 (transport close)[39m
+[36m[15:06:50] - vMEhtAhu-tpPsVVqAAAm left channel: private-chat (transport close)[39m
+[36m[15:06:50] - vMEhtAhu-tpPsVVqAAAm left channel: private-user.1 (transport close)[39m
+[36m[15:06:52] - um_6RR1xhwHFo9G_AAAn authenticated for: presence-chat.default[39m
+[36m[15:06:52] - um_6RR1xhwHFo9G_AAAn joined channel: presence-chat.default[39m
+[36m[15:06:53] - um_6RR1xhwHFo9G_AAAn authenticated for: private-user.1[39m
+[36m[15:06:53] - um_6RR1xhwHFo9G_AAAn joined channel: private-user.1[39m
+[36m[15:06:53] - um_6RR1xhwHFo9G_AAAn authenticated for: private-App.User.1[39m
+[36m[15:06:53] - um_6RR1xhwHFo9G_AAAn joined channel: private-App.User.1[39m
+[36m[15:06:54] - um_6RR1xhwHFo9G_AAAn authenticated for: private-chat[39m
+[36m[15:06:54] - um_6RR1xhwHFo9G_AAAn joined channel: private-chat[39m
+[36m[15:07:38] - um_6RR1xhwHFo9G_AAAn left channel: presence-chat.default (transport close)[39m
+[36m[15:07:38] - um_6RR1xhwHFo9G_AAAn left channel: private-user.1 (transport close)[39m
+[36m[15:07:38] - um_6RR1xhwHFo9G_AAAn left channel: private-App.User.1 (transport close)[39m
+[36m[15:07:38] - um_6RR1xhwHFo9G_AAAn left channel: private-chat (transport close)[39m
+[36m[15:07:40] - WH_RFl35XCUFV21oAAAo authenticated for: presence-chat.default[39m
+[36m[15:07:40] - WH_RFl35XCUFV21oAAAo joined channel: presence-chat.default[39m
+[36m[15:07:41] - WH_RFl35XCUFV21oAAAo authenticated for: private-user.1[39m
+[36m[15:07:41] - WH_RFl35XCUFV21oAAAo joined channel: private-user.1[39m
+[36m[15:07:41] - WH_RFl35XCUFV21oAAAo authenticated for: private-App.User.1[39m
+[36m[15:07:41] - WH_RFl35XCUFV21oAAAo joined channel: private-App.User.1[39m
+[36m[15:07:41] - WH_RFl35XCUFV21oAAAo authenticated for: private-chat[39m
+[36m[15:07:41] - WH_RFl35XCUFV21oAAAo joined channel: private-chat[39m
+[36m[15:11:31] - WH_RFl35XCUFV21oAAAo left channel: presence-chat.default (transport close)[39m
+[36m[15:11:31] - WH_RFl35XCUFV21oAAAo left channel: private-user.1 (transport close)[39m
+[36m[15:11:31] - WH_RFl35XCUFV21oAAAo left channel: private-App.User.1 (transport close)[39m
+[36m[15:11:31] - WH_RFl35XCUFV21oAAAo left channel: private-chat (transport close)[39m
+[36m[15:11:34] - 8jtA5Em9M8QDWm1GAAAp authenticated for: presence-chat.default[39m
+[36m[15:11:34] - 8jtA5Em9M8QDWm1GAAAp joined channel: presence-chat.default[39m
+[36m[15:11:34] - 8jtA5Em9M8QDWm1GAAAp authenticated for: private-App.User.1[39m
+[36m[15:11:34] - 8jtA5Em9M8QDWm1GAAAp joined channel: private-App.User.1[39m
+[36m[15:11:35] - 8jtA5Em9M8QDWm1GAAAp authenticated for: private-chat[39m
+[36m[15:11:35] - 8jtA5Em9M8QDWm1GAAAp joined channel: private-chat[39m
+[36m[15:11:35] - 8jtA5Em9M8QDWm1GAAAp authenticated for: private-user.1[39m
+[36m[15:11:35] - 8jtA5Em9M8QDWm1GAAAp joined channel: private-user.1[39m
+[36m[15:12:41] - 8jtA5Em9M8QDWm1GAAAp left channel: presence-chat.default (transport close)[39m
+[36m[15:12:41] - 8jtA5Em9M8QDWm1GAAAp left channel: private-App.User.1 (transport close)[39m
+[36m[15:12:41] - 8jtA5Em9M8QDWm1GAAAp left channel: private-chat (transport close)[39m
+[36m[15:12:41] - 8jtA5Em9M8QDWm1GAAAp left channel: private-user.1 (transport close)[39m
+[36m[15:12:43] - C-nXToHqqysZYSLlAAAq authenticated for: presence-chat.default[39m
+[36m[15:12:43] - C-nXToHqqysZYSLlAAAq joined channel: presence-chat.default[39m
+[36m[15:12:44] - C-nXToHqqysZYSLlAAAq authenticated for: private-App.User.1[39m
+[36m[15:12:44] - C-nXToHqqysZYSLlAAAq joined channel: private-App.User.1[39m
+[36m[15:12:44] - C-nXToHqqysZYSLlAAAq authenticated for: private-chat[39m
+[36m[15:12:44] - C-nXToHqqysZYSLlAAAq joined channel: private-chat[39m
+[36m[15:12:44] - C-nXToHqqysZYSLlAAAq authenticated for: private-user.1[39m
+[36m[15:12:44] - C-nXToHqqysZYSLlAAAq joined channel: private-user.1[39m
