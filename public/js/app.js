@@ -80472,7 +80472,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
       // console.log(notification);
     });
 
-    this.$snotify.simple("Macychat loaded");
+    this.$snotify.success("Maaac mac mac load se onede");
   },
 
   methods: {
@@ -81064,7 +81064,7 @@ var render = function() {
           attrs: { id: "main-chat-card" }
         },
         [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Yepy Machat")]),
+          _c("div", { staticClass: "card-header" }, [_vm._v("Na gjoso chato")]),
           _vm._v(" "),
           _c(
             "div",

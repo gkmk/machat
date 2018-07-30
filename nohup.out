@@ -1767,3 +1767,59 @@ Horizon started successfully.
 [36mEvent: App\Events\SendMessage[39m
 [2018-07-30 14:41:38][55] Processing: App\Jobs\SaveMessageHistory
 [2018-07-30 14:41:39][55] Processed:  App\Jobs\SaveMessageHistory
+[36m[14:42:26] - gJehPfTz3tvkmS5_AAAb left channel: private-chat (transport close)[39m
+[36m[14:42:26] - gJehPfTz3tvkmS5_AAAb left channel: presence-chat.default (transport close)[39m
+[36m[14:42:26] - gJehPfTz3tvkmS5_AAAb left channel: private-user.1 (transport close)[39m
+[36m[14:42:26] - gJehPfTz3tvkmS5_AAAb left channel: private-App.User.1 (transport close)[39m
+[36m[14:42:27] - J2YOH8a0Mkfi2dO3AAAc authenticated for: presence-chat.default[39m
+[36m[14:42:27] - J2YOH8a0Mkfi2dO3AAAc joined channel: presence-chat.default[39m
+[36m[14:42:27] - J2YOH8a0Mkfi2dO3AAAc authenticated for: private-user.1[39m
+[36m[14:42:27] - J2YOH8a0Mkfi2dO3AAAc joined channel: private-user.1[39m
+[36m[14:42:28] - J2YOH8a0Mkfi2dO3AAAc authenticated for: private-App.User.1[39m
+[36m[14:42:28] - J2YOH8a0Mkfi2dO3AAAc joined channel: private-App.User.1[39m
+[36m[14:42:28] - J2YOH8a0Mkfi2dO3AAAc authenticated for: private-chat[39m
+[36m[14:42:28] - J2YOH8a0Mkfi2dO3AAAc joined channel: private-chat[39m
+[36m[14:43:38] - qPvulixSWijg3J4wAAAf authenticated for: presence-chat.default[39m
+[36m[14:43:38] - qPvulixSWijg3J4wAAAf joined channel: presence-chat.default[39m
+[36m[14:43:38] - qPvulixSWijg3J4wAAAf authenticated for: private-user.2[39m
+[36m[14:43:38] - qPvulixSWijg3J4wAAAf joined channel: private-user.2[39m
+[36m[14:43:39] - qPvulixSWijg3J4wAAAf authenticated for: private-App.User.2[39m
+[36m[14:43:39] - qPvulixSWijg3J4wAAAf joined channel: private-App.User.2[39m
+[36m[14:43:39] - qPvulixSWijg3J4wAAAf authenticated for: private-chat[39m
+[36m[14:43:39] - qPvulixSWijg3J4wAAAf joined channel: private-chat[39m
+[36m[14:44:05] - qPvulixSWijg3J4wAAAf left channel: presence-chat.default (transport close)[39m
+[36m[14:44:05] - qPvulixSWijg3J4wAAAf left channel: private-user.2 (transport close)[39m
+[36m[14:44:05] - qPvulixSWijg3J4wAAAf left channel: private-App.User.2 (transport close)[39m
+[36m[14:44:05] - qPvulixSWijg3J4wAAAf left channel: private-chat (transport close)[39m
+[36m[14:44:06] - uUOu6nLONLpLdqdFAAAg authenticated for: private-user.2[39m
+[36m[14:44:06] - uUOu6nLONLpLdqdFAAAg joined channel: private-user.2[39m
+[36m[14:44:06] - uUOu6nLONLpLdqdFAAAg authenticated for: presence-chat.default[39m
+[36m[14:44:06] - uUOu6nLONLpLdqdFAAAg joined channel: presence-chat.default[39m
+[36m[14:44:07] - uUOu6nLONLpLdqdFAAAg authenticated for: private-App.User.2[39m
+[36m[14:44:07] - uUOu6nLONLpLdqdFAAAg joined channel: private-App.User.2[39m
+[36m[14:44:07] - uUOu6nLONLpLdqdFAAAg authenticated for: private-chat[39m
+[36m[14:44:07] - uUOu6nLONLpLdqdFAAAg joined channel: private-chat[39m
+[36m[14:44:51] - J2YOH8a0Mkfi2dO3AAAc left channel: presence-chat.default (transport close)[39m
+[36m[14:44:51] - J2YOH8a0Mkfi2dO3AAAc left channel: private-user.1 (transport close)[39m
+[36m[14:44:51] - J2YOH8a0Mkfi2dO3AAAc left channel: private-App.User.1 (transport close)[39m
+[36m[14:44:51] - J2YOH8a0Mkfi2dO3AAAc left channel: private-chat (transport close)[39m
+[36m[14:44:53] - 9tjeryPc2VZOkLxdAAAh authenticated for: presence-chat.default[39m
+[36m[14:44:53] - 9tjeryPc2VZOkLxdAAAh joined channel: presence-chat.default[39m
+[36m[14:44:54] - 9tjeryPc2VZOkLxdAAAh authenticated for: private-chat[39m
+[36m[14:44:54] - 9tjeryPc2VZOkLxdAAAh joined channel: private-chat[39m
+[36m[14:44:54] - 9tjeryPc2VZOkLxdAAAh authenticated for: private-App.User.1[39m
+[36m[14:44:54] - 9tjeryPc2VZOkLxdAAAh joined channel: private-App.User.1[39m
+[36m[14:44:54] - 9tjeryPc2VZOkLxdAAAh authenticated for: private-user.1[39m
+[36m[14:44:54] - 9tjeryPc2VZOkLxdAAAh joined channel: private-user.1[39m
+[36mChannel: presence-chat.default[39m
+[36mEvent: App\Events\SendMessage[39m
+[2018-07-30 14:45:04][56] Processing: App\Jobs\SaveMessageHistory
+[2018-07-30 14:45:04][56] Processed:  App\Jobs\SaveMessageHistory
+[36mChannel: presence-chat.default[39m
+[36mEvent: App\Events\SendMessage[39m
+[2018-07-30 14:45:09][57] Processing: App\Jobs\SaveMessageHistory
+[2018-07-30 14:45:09][57] Processed:  App\Jobs\SaveMessageHistory
+[36mChannel: presence-chat.default[39m
+[36mEvent: App\Events\SendMessage[39m
+[2018-07-30 14:45:12][58] Processing: App\Jobs\SaveMessageHistory
+[2018-07-30 14:45:12][58] Processed:  App\Jobs\SaveMessageHistory

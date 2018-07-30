@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex flex-column" id="chat-component">
       <div class="card text-white bg-dark" id="main-chat-card">
-          <div class="card-header">Yepy Machat</div>
+          <div class="card-header">Na gjoso chato</div>
           <div class="card-body d-flex flex-row align-items-stretch">
             <div class="d-none d-sm-none d-md-block col-md-2">
               tuka ke se kanali a u   
@@ -65,7 +65,7 @@ export default {
       // console.log(notification);
     });
 
-    this.$snotify.simple("Macychat loaded");
+    this.$snotify.success("Maaac mac mac load se onede");
   },
   methods: {
     /**
