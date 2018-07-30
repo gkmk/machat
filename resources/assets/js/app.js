@@ -26,24 +26,5 @@ Vue.use(require('vue-moment'));
 Vue.component('chat-component', require('./components/ChatComponent.vue'));
 
 const app = new Vue({
-    el: '#app',
-    data: {
-        vueTheme: 'light',
-        vueNavClass: 'navbar-light'
-    },
-    methods: {
-        triggy() {
-            switch (this.vueTheme) {
-                case 'light':
-                    this.vueTheme = 'bg-dark text-white';
-                    this.vueNavClass = 'navbar-dark bg-dark';
-                    break;
-                case 'bg-dark text-white':
-                    this.vueTheme = 'light';
-                    this.vueNavClass = 'navbar-light';
-                    break;
-                default:
-            }
-        }
-    }
+    el: '#app'
 });

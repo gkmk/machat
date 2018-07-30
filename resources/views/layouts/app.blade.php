@@ -21,9 +21,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" :class="vueTheme">
+    <div id="app">
         <vue-snotify></vue-snotify>
-        <nav class="navbar navbar-expand-md navbar-laravel" :class="vueNavClass">
+        <nav class="navbar navbar-expand-md navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -40,7 +40,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <button class="btn btn-outline-success my-2 my-sm-0" @click="triggy" data-toggle="button">Toggle Dark Mode</button>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

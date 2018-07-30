@@ -44998,7 +44998,7 @@ module.exports = Vue;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(161);
-module.exports = __webpack_require__(226);
+module.exports = __webpack_require__(227);
 
 
 /***/ }),
@@ -45036,26 +45036,7 @@ Vue.use(__webpack_require__(215));
 Vue.component('chat-component', __webpack_require__(216));
 
 var app = new Vue({
-    el: '#app',
-    data: {
-        vueTheme: 'light',
-        vueNavClass: 'navbar-light'
-    },
-    methods: {
-        triggy: function triggy() {
-            switch (this.vueTheme) {
-                case 'light':
-                    this.vueTheme = 'bg-dark text-white';
-                    this.vueNavClass = 'navbar-dark bg-dark';
-                    break;
-                case 'bg-dark text-white':
-                    this.vueTheme = 'light';
-                    this.vueNavClass = 'navbar-light';
-                    break;
-                default:
-            }
-        }
-    }
+  el: '#app'
 });
 
 /***/ }),
@@ -45132,6 +45113,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 });
 
 window.moment = __webpack_require__(0);
+// import Picker from "emoji-mart-vue";
 
 /***/ }),
 /* 163 */
@@ -80375,7 +80357,7 @@ var normalizeComponent = __webpack_require__(17)
 /* script */
 var __vue_script__ = __webpack_require__(217)
 /* template */
-var __vue_template__ = __webpack_require__(225)
+var __vue_template__ = __webpack_require__(226)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -80448,6 +80430,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Vue.component("chat-list", __webpack_require__(218));
 Vue.component("message-list", __webpack_require__(221));
 
+
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -80456,7 +80439,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
       users: [],
       messages: [],
       message: "",
-      direct: 0
+      direct: 0,
+      channel: "default",
+      nextpage: "",
+      loading: false
     };
   },
   props: {
@@ -80465,21 +80451,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
   mounted: function mounted() {
     var _this = this;
 
-    // handle direct chat
-    Echo.join("chat.default").here(function (users) {
-      _this.users = users;
-    }).joining(function (user) {
-      _this.users.push({ id: user.id, name: user.name });
-      _this.$snotify.simple(user.name + " joined the party");
-    }).leaving(function (user) {
-      _this.users = _.remove(_this.users, function (n) {
-        return n.id != user.id;
-      });
-      _this.$snotify.simple(user.name + " left the party");
-    }).listen("SendMessage", function (e) {
-      //
-      _this.messages.push(e.message);
-    });
+    // join the main channel
+    this.joinChannel(this.channel);
 
     //  listen for direct messages
     Echo.private("user." + this.user.id).listen("SendMessage", function (e) {
@@ -80490,7 +80463,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
     // handle ghost typing event
     Echo.private("chat").listenForWhisper("typing", function (e) {
       _this.$snotify.simple(e.name + "is typing... ");
-      console.log(e.name + "Typing... ");
+      // console.log(e.name + "Typing... ");
     });
 
     // register notifications pool
@@ -80499,17 +80472,62 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
       // console.log(notification);
     });
 
-    axios.get("/message").then(function (response) {
-      _this.messages = _.reverse(response.data);
-    }).catch(function (error) {
-      // handle error
-      console.log(error);
-      console.log(this);
-    });
     this.$snotify.simple("Macychat loaded");
   },
 
   methods: {
+    /**
+     * Join channel
+     */
+    joinChannel: function joinChannel(channel) {
+      var _this2 = this;
+
+      this.channel = channel;
+      Echo.join("chat." + channel).here(function (users) {
+        _this2.users = users;
+      }).joining(function (user) {
+        _this2.users.push({ id: user.id, name: user.name });
+        _this2.$snotify.simple(user.name + " joined the party");
+      }).leaving(function (user) {
+        _this2.users = _.remove(_this2.users, function (n) {
+          return n.id != user.id;
+        });
+        _this2.$snotify.simple(user.name + " left the party");
+      }).listen("SendMessage", function (e) {
+        //
+        _this2.messages.push(e.message);
+      });
+
+      //  Load channel history
+      axios.get("/message/" + channel).then(function (response) {
+        // console.log(response);
+        _this2.messages = _.reverse(response.data.data);
+        _this2.nextpage = response.data.next_page_url;
+      }).catch(function (error) {
+        // handle error
+        console.log(error);
+        console.log(this);
+      });
+    },
+    loadMore: function loadMore() {
+      var _this3 = this;
+
+      if (this.loading) return;
+      this.loading = true;
+      if (this.nextpage) {
+        console.log('LOADING MORE>>>');
+        axios.get(this.nextpage).then(function (response) {
+          _this3.messages = _.union(_.reverse(response.data.data), _this3.messages);
+          _this3.nextpage = response.data.next_page_url;
+          _this3.loading = false;
+        }).catch(function (error) {
+          // handle error
+          console.log(error);
+          console.log(this);
+          this.loading = false;
+        });
+      }
+    },
     addMessage: function addMessage() {
       //   this.messages.push(message);
       if (!this.message) return;
@@ -80517,7 +80535,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
         message: this.message,
         from_id: this.user.id,
         from_name: this.user.name,
-        room_id: "default",
+        room_id: this.channel,
         is_public: true
       };
       if (this.direct) {
@@ -80833,6 +80851,7 @@ var messageHistory = {
   },
   mounted: function mounted() {
     console.log("Users list.");
+    this.scroll(this);
   },
 
   methods: {
@@ -80842,8 +80861,15 @@ var messageHistory = {
         messageHistory.lastUpdate = moment(message.created_at).calendar();
         return false;
       }
-
       return true;
+    },
+    scroll: function scroll(v) {
+      $("#messages-list").scroll(function () {
+        var top = $(this).scrollTop();
+        if (top <= 20) {
+          v.$emit("onScrollTop");
+        }
+      });
     }
   }
 });
@@ -80862,49 +80888,52 @@ var render = function() {
     [
       !_vm.messages.length ? _c("div", [_vm._m(0)]) : _vm._e(),
       _vm._v(" "),
-      _vm.messages.length
-        ? _c(
-            "div",
+      _c(
+        "div",
+        {
+          directives: [
             {
-              directives: [{ name: "chat-scroll", rawName: "v-chat-scroll" }],
-              attrs: { id: "messages-list" }
+              name: "show",
+              rawName: "v-show",
+              value: _vm.messages.length,
+              expression: "messages.length"
             },
-            _vm._l(_vm.messages, function(message) {
-              return _c("div", { key: message.id }, [
-                !_vm.samePerson(message)
-                  ? _c("div", [
-                      _c("hr"),
-                      _vm._v(" "),
-                      _c(
-                        "h5",
-                        {
-                          staticClass:
-                            "p-2 mb-3 mr-3 bg-dark text-white shadow rounded"
-                        },
-                        [
-                          _vm._v(_vm._s(message.from_name) + " "),
-                          _c("small", [
-                            _c("small", [
-                              _vm._v(
-                                _vm._s(
-                                  _vm._f("moment")(
-                                    message.created_at,
-                                    "calendar"
-                                  )
-                                )
-                              )
-                            ])
-                          ])
-                        ]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(message.message))])
-              ])
-            })
-          )
-        : _vm._e()
+            { name: "chat-scroll", rawName: "v-chat-scroll" }
+          ],
+          attrs: { id: "messages-list" }
+        },
+        _vm._l(_vm.messages, function(message) {
+          return _c("div", { key: message.id }, [
+            !_vm.samePerson(message)
+              ? _c("div", [
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c(
+                    "h5",
+                    {
+                      staticClass:
+                        "p-2 mb-3 mr-3 bg-dark text-white shadow rounded"
+                    },
+                    [
+                      _vm._v(_vm._s(message.from_name) + " "),
+                      _c("small", [
+                        _c("small", [
+                          _vm._v(
+                            _vm._s(
+                              _vm._f("moment")(message.created_at, "calendar")
+                            )
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(message.message))])
+          ])
+        })
+      )
     ]
   )
 }
@@ -81016,7 +81045,8 @@ return VueChatScroll;
 
 
 /***/ }),
-/* 225 */
+/* 225 */,
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -81054,7 +81084,8 @@ var render = function() {
                 },
                 [
                   _c("message-list", {
-                    attrs: { messages: _vm.messages, user: _vm.user.id }
+                    attrs: { messages: _vm.messages, user: _vm.user.id },
+                    on: { onScrollTop: _vm.loadMore }
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "p-2" }, [
@@ -81133,7 +81164,7 @@ if (false) {
 }
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

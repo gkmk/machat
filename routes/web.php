@@ -24,6 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function() {
     Route::resource('message', 'MessageController')->only([
-        'index', 'store'
+        'show', 'store'
     ]);
 });

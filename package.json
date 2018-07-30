@@ -26,6 +26,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "emoji-mart-vue": "^2.6.4",
     "laravel-echo": "^1.4.0",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.21",

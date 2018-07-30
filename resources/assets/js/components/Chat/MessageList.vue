@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="messages.length" id="messages-list" v-chat-scroll>
+        <div v-show="messages.length" id="messages-list" v-chat-scroll>
             <div v-for="message in messages" 
             :key="message.id"
             >
@@ -36,14 +36,13 @@
 
 <script>
 var messageHistory = {
-    lastFrom:0, 
-    lastUpdate:0
-}
+  lastFrom: 0,
+  lastUpdate: 0
+};
 export default {
   name: "message-list",
   data: function() {
-    return {
-    };
+    return {};
   },
   props: {
     messages: Array,
@@ -52,17 +51,28 @@ export default {
   },
   mounted() {
     console.log("Users list.");
+    this.scroll(this);
   },
   methods: {
-      samePerson(message) {
-          if (messageHistory.lastFrom != message.from_id || moment(message.created_at).calendar() != messageHistory.lastUpdate ) {
-              messageHistory.lastFrom = message.from_id;
-              messageHistory.lastUpdate = moment(message.created_at).calendar();
-              return false;
-          }
-          
-          return true;
+    samePerson(message) {
+      if (
+        messageHistory.lastFrom != message.from_id ||
+        moment(message.created_at).calendar() != messageHistory.lastUpdate
+      ) {
+        messageHistory.lastFrom = message.from_id;
+        messageHistory.lastUpdate = moment(message.created_at).calendar();
+        return false;
       }
+      return true;
+    },
+    scroll(v) {
+      $("#messages-list").scroll(function() {
+        let top = $(this).scrollTop();
+        if (top <= 20) {
+          v.$emit("onScrollTop");
+        }
+      });
+    }
   }
 };
 </script>

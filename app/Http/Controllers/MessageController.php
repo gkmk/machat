@@ -12,10 +12,10 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show($room)
     {
         //
-        return Message::latest()->take(20)->get();
+        return Message::where('room_id', $room)->latest()->simplePaginate(10);
     }
 
     /**
