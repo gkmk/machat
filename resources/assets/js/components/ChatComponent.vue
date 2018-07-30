@@ -1,12 +1,12 @@
 <template>
-    <div class="container-fluid">
+    <div class="d-flex flex-column" id="chat-component">
       <div class="card text-white bg-dark" id="main-chat-card">
           <div class="card-header">Yepy Machat</div>
           <div class="card-body d-flex flex-row align-items-stretch">
             <div class="d-none d-sm-none d-md-block col-md-2">
               tuka ke se kanali a u   
             </div>
-            <div class="col-xs-12 col-md-8 align-items-start flex-column bd-highlight mb-3">
+            <div class="col-xs-12 col-md-8 d-flex flex-column align-items-stretch bd-highlight mb-3">
               <message-list :messages="messages" :user="user.id"></message-list>      
 
               <div class="p-2">

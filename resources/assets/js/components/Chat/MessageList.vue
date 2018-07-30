@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-auto p-2 messages-list">
+    <div class="d-flex flex-column align-items-stretch mb-auto p-2">
         <div v-if="!messages.length">
             <div class="ph-item">
                 <div class="ph-col-12">
@@ -19,13 +19,13 @@
                 </div>
             </div>
         </div>
-        <div v-if="messages" v-chat-scroll>
+        <div v-if="messages.length" id="messages-list" v-chat-scroll>
             <div v-for="message in messages" 
             :key="message.id"
             >
                 <div v-if="!samePerson(message)">
                     <hr>
-                    <h5 class="p-2 mb-3 bg-dark text-white shadow rounded">{{message.from_name}} <small>{{message.created_at+" +0000" | moment("from") }}</small> </h5>
+                    <h5 class="p-2 mb-3 mr-3 bg-dark text-white shadow rounded">{{message.from_name}} <small><small>{{message.created_at | moment("calendar") }}</small></small> </h5>
                 </div>
 
                 <p>{{message.message}}</p>
@@ -35,12 +35,14 @@
 </template>
 
 <script>
+var messageHistory = {
+    lastFrom:0, 
+    lastUpdate:0
+}
 export default {
   name: "message-list",
   data: function() {
     return {
-      lastFrom: 0,
-      lastUpdate: 0
     };
   },
   props: {
@@ -53,9 +55,9 @@ export default {
   },
   methods: {
       samePerson(message) {
-          if (this.lastFrom != message.from_id || moment(message.created_at).from() != this.lastUpdate ) {
-              this.lastFrom = message.from_id;
-              this.lastUpdate = moment(message.created_at).from();
+          if (messageHistory.lastFrom != message.from_id || moment(message.created_at).calendar() != messageHistory.lastUpdate ) {
+              messageHistory.lastFrom = message.from_id;
+              messageHistory.lastUpdate = moment(message.created_at).calendar();
               return false;
           }
           

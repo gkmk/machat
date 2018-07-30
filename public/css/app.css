@@ -11597,13 +11597,36 @@ a.text-dark:focus {
   padding: 0 !important;
 }
 
-#main-chat-card {
-  height: 100vh;
+html,
+body,
+#app,
+main {
+  height: 100%;
 }
 
-.messages-list {
-  max-height: 96%;
-  overflow-y: scroll;
+.d-flex {
+  min-height: 0;
+  /* NEW */
+  min-width: 0;
+  /* NEW */
+}
+
+#chat-component {
+  height: 100%;
+}
+
+#main-chat-card {
+  min-height: 0;
+  /* NEW */
+  min-width: 0;
+  /* NEW */
+}
+
+#messages-list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow-y: auto;
 }
 
 .navbar-laravel {

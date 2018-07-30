@@ -35,7 +35,13 @@ class MessageController extends Controller
         ]);
 
         //  send the message to users
-        broadcast(new \App\Events\SendMessage($request->all())); 
+        broadcast(new \App\Events\SendMessage(array_merge(
+            $request->all(),
+            [
+                'created_at'=>date('c'),
+                'id'=>md5(uniqid())
+            ]
+            ) )); 
 
         // queue message for saving
         dispatch(new \App\Jobs\SaveMessageHistory($request->all()));

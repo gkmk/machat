@@ -9,6 +9,8 @@ class Message extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'messages';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,7 +24,13 @@ class Message extends Model
         'is_public'
     ];
 
-    protected $table = 'messages';
+    /**
+     * Casting 
+     */
+    protected $casts = [
+        'created_at' => 'datetime:c',
+    ];
+
 
     /**
      * Relationships

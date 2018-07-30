@@ -20,7 +20,7 @@ class CreateMessageTable extends Migration
             $table->string('from_name');
             $table->text('message');
             $table->boolean('is_public')->default(true);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

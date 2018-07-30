@@ -14,10 +14,10 @@
         <div v-if="users" class="users-list">
             <div v-for="user in users" 
                 :key="user.id">
-                <div v-if="user.id == me" class="p-2 mb-1 bg-primary text-white">
+                <div v-if="user.id == me" class="p-2 mb-1 bg-primary text-white text-truncate">
                     {{user.name}}
                 </div>
-                <div v-else class="p-2 mb-1 bg-secondary text-white" @click="directTo(user.id)">
+                <div v-else class="p-2 mb-1 bg-secondary text-white text-truncate" @click="directTo(user.id)">
                     {{user.name}}
                 </div>
             </div>
