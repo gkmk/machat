@@ -1,10 +1,10 @@
 <template>
-    <div class="d-flex flex-column" id="chat-component">
+    <div class="d-flex flex-column animated fadeIn" id="chat-component">
       <div class="card text-white bg-dark" id="main-chat-card">
           <div class="card-header">Na gjoso chato</div>
           <div class="card-body d-flex flex-row align-items-stretch">
             <div class="d-none d-sm-none d-md-block col-md-2">
-              tuka ke se kanali a u   
+              <room-list :rooms="rooms" :me="user.id" @directmsg="directmsg"></room-list>  
             </div>
             <div class="col-xs-12 col-md-8 d-flex flex-column align-items-stretch bd-highlight mb-3">
               <message-list :messages="messages" @onScrollTop="loadMore" :user="user.id"></message-list>      
@@ -14,7 +14,7 @@
               </div>
             </div>
             <div class="d-none d-sm-none d-md-block col-md-2">
-              <chat-list :users="users" :me="user.id" @directmsg="directmsg"></chat-list>    
+              <user-list :users="users" :me="user.id" @directmsg="directmsg"></user-list>    
             </div>
           </div>
         </div>
@@ -22,7 +22,8 @@
 </template>
 
 <script>
-Vue.component("chat-list", require("./Chat/ChatList.vue"));
+Vue.component("user-list", require("./Chat/UserList.vue"));
+Vue.component("room-list", require("./Chat/RoomList.vue"));
 Vue.component("message-list", require("./Chat/MessageList.vue"));
 import VueChatScroll from "vue-chat-scroll";
 
@@ -32,6 +33,9 @@ export default {
   data: function() {
     return {
       users: [],
+      rooms: [
+        {id:'default',name:'Main Room'}
+      ],
       messages: [],
       message: "",
       direct: 0,
@@ -114,9 +118,13 @@ export default {
         axios
           .get(this.nextpage)
           .then(response => {
+            let lastMsgId = this.messages[0].id
             this.messages = _.union(_.reverse(response.data.data), this.messages);
             this.nextpage = response.data.next_page_url;
             this.loading = false;
+            setTimeout(function(){
+              $("#messages-list").scrollTop($("#"+lastMsgId).offset().top-150)
+            }, 100)
           })
           .catch(function(error) {
             // handle error
@@ -159,6 +167,7 @@ export default {
     },
     directmsg(id) {
       this.direct = id;
+      joinChannel = id;
     }
   }
 };

@@ -19,17 +19,20 @@
                 </div>
             </div>
         </div>
-        <div v-show="messages.length" id="messages-list" v-chat-scroll>
-            <div v-for="message in messages" 
+        <div 
+        v-show="messages.length" 
+        id="messages-list" 
+        v-chat-scroll="{always: false, smooth: false}"
+        v-on:scroll="scroll">
+          <div v-for="message in messages" 
             :key="message.id"
             >
-                <div v-if="!samePerson(message)">
-                    <hr>
-                    <h5 class="p-2 mb-3 mr-3 bg-dark text-white shadow rounded">{{message.from_name}} <small><small>{{message.created_at | moment("calendar") }}</small></small> </h5>
-                </div>
-
-                <p>{{message.message}}</p>
-            </div>
+              <div v-if="!samePerson(message)">
+                  <hr>
+                  <h5 class="p-2 mb-3 mr-3 bg-dark text-white shadow rounded">{{message.from_name}} <small><small>{{message.created_at | moment("calendar") }}</small></small> </h5>
+              </div>
+              <p :id="message.id">{{message.message}}</p>
+          </div>
         </div>
     </div> 
 </template>
@@ -51,7 +54,6 @@ export default {
   },
   mounted() {
     console.log("Users list.");
-    this.scroll(this);
   },
   methods: {
     samePerson(message) {
@@ -65,7 +67,8 @@ export default {
       }
       return true;
     },
-    scroll(v) {
+    scroll() {
+      let v = this;
       $("#messages-list").scroll(function() {
         let top = $(this).scrollTop();
         if (top <= 20) {

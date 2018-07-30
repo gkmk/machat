@@ -64,4 +64,3 @@ window.Echo = new Echo({
 });
 
 window.moment = require('moment')
-// import Picker from "emoji-mart-vue";

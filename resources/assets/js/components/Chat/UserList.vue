@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="users" class="users-list">
+        <div v-if="users.length" class="users-list">
             <div v-for="user in users" 
                 :key="user.id">
                 <div v-if="user.id == me" class="p-2 mb-1 bg-primary text-white text-truncate">
@@ -29,7 +29,7 @@
 
 
 export default {
-  name: "chat-list",
+  name: "user-list",
   props: {
     users: Array,
     channel: String,

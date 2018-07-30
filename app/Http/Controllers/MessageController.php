@@ -15,7 +15,7 @@ class MessageController extends Controller
     public function show($room)
     {
         //
-        return Message::where('room_id', $room)->latest()->simplePaginate(10);
+        return Message::where('room_id', $room)->latest()->simplePaginate(20);
     }
 
     /**
