@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'mailtrap' => [
+        'secret' => '1023a8497ee43351b3ddd66719ec5593',
+        'default_inbox' => '435661'
+    ]
 ];
